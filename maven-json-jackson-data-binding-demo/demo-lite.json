@@ -1,0 +1,16 @@
+{
+	"firstName": "Bhuppi",
+	"lastName": "Janghel",
+	"address": {
+		"city": "kolkata",
+		"zipCode": "700065",
+		"streetAddress": "main-Street"
+	},
+	"country": "India",
+	"language": [
+		"Hindi",
+		"English",
+		"Chinese"
+	],
+	"active":true
+}
