@@ -1,0 +1,15 @@
+server.port=1234
+server.servlet.context-path=/demo
+
+#add my custom properties
+
+coach.name=mickey mouse
+team.name=mickey
+
+
+info.app.name=01-spring-boot-demo
+info.app.owner=ibm fsd
+info.app.description=my first spring boot app
+info.app.version=0.0.1
+
+management.endpoints.web.exposure.include=*

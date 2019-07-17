@@ -1,0 +1,36 @@
+package com.example.Thymeleaf.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.Thymeleaf.model.Student;
+
+@Controller
+@RequestMapping("/student")
+public class HomeController {
+
+	private List<Student> students;
+
+	@PostConstruct
+	public void init() {
+		students = new ArrayList<Student>();
+		students.add(new Student(1, "Bhupendra", "bangalore"));
+		students.add(new Student(2, "Arindam", "kolkata"));
+		students.add(new Student(3, "HemLata", "pune"));
+	}
+	
+	@GetMapping("/list")
+	public String getAllStudent(Model theModel)
+	{
+		 theModel.addAttribute("studentList",students);
+		 return "student-list";
+	}
+	
+}

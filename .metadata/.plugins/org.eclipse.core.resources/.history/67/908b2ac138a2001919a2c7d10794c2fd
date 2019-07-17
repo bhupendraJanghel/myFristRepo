@@ -1,0 +1,57 @@
+package com.example.springbootRestEmployee.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.springbootRestEmployee.controller.EmployeeNotFoundException;
+import com.example.springbootRestEmployee.dao.EmployeeDao;
+import com.example.springbootRestEmployee.entity.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+	
+	private EmployeeDao dao;
+
+	@Autowired
+	public EmployeeServiceImpl(EmployeeDao dao) {
+		super();
+		this.dao = dao;
+	}
+
+	@Override
+	@Transactional
+	public Employee saveEmployee(Employee employee) {
+		
+		return dao.save(employee);
+	}
+
+	@Override
+	public Optional<Employee> getEmployeeById(int id) {
+		
+		Optional<Employee> empOptional=dao.findById(id);
+		if(!empOptional.isPresent())
+		{
+			 throw new EmployeeNotFoundException("Exception not found"+id);
+		}
+		return empOptional;
+	}
+
+	@Override
+	@Transactional
+	public List<Employee> getAllEmployee() {
+		
+		return dao.findAll();
+	}
+
+	@Override
+	@Transactional
+	public void deleteEmployee(int id) {
+		 dao.deleteById(id);
+
+	}
+};

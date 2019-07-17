@@ -1,0 +1,8 @@
+server.port=1235
+
+spring.security.user.name=bhuppi
+spring.security.user.password=123
+
+
+management.endpoints.web.exposure.include=*
+management.endpoints.web.exposure.include=health,info

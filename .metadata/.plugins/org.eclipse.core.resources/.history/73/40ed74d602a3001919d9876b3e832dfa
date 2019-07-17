@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<head>
+<meta charset="ISO-8859-1">
+<title>List of Employee</title>
+</head>
+<body>
+<h2>Employee Directory</h2>
+	<hr>
+
+
+	<div class="container ">
+		<a class="btn btn-success" th:href="@{/employees/showForm}">New Employee</a><br />
+		<br />
+		<table class="table table-striped">
+			<thead class="">
+				<tr>
+					<td>ID</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>Salary</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="emp:${employeeList}">
+
+					<td th:text="${emp.id}"></td>
+					<td th:text="${emp.firstName}"></td>
+					<td th:text="${emp.lastName}"></td>
+					<td th:text="${emp.salary}">
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+</body>
+</html>

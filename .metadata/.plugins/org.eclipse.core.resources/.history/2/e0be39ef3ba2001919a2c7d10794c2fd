@@ -1,0 +1,46 @@
+package com.example.springbootRestEmployee.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.springbootRestEmployee.dao.CustomerDao;
+import com.example.springbootRestEmployee.entity.Customer;
+
+public class CutomerServiceimpl implements CustomerService {
+
+	private CustomerDao dao;
+	
+	@Autowired
+	public CutomerServiceimpl(CustomerDao dao) {
+		super();
+		this.dao = dao;
+	}
+
+	@Override
+	public List<Customer> getAllCustomer() {
+		
+		return dao.findAll();
+	}
+
+	@Override
+	public Optional<Customer> getCustomerById(int id) {
+		
+		Optional<Customer> cust=
+		return dao;
+	}
+
+	@Override
+	public Customer saveCusotmer(Customer customer) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteCustomer(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

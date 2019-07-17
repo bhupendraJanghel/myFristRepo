@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="02-spring-boot-Rest-JPA-Employee"/>
+<aop-project name="spring-mvc-security"/>
+<aop-project name="01-spring-boot-Rest-Employee"/>
+<aop-project name="projectManagement-task"/>
+<aop-project name="03-spring-boot-Rest-SpringDao"/>
+<aop-project name="02-spring-mvc-security-database"/>
+<aop-project name="04-spring-boot-Rest-SpringDao-noController"/>
+</aop-reference-model>

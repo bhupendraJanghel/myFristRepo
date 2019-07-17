@@ -1,0 +1,42 @@
+package com.example.springbootRestEmployee.service;
+
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.springbootRestEmployee.dao.EmployeeDao;
+import com.example.springbootRestEmployee.entity.Employee;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+	@Autowired
+	private EmployeeDao dao;
+
+	@Override
+	public Employee saveEmployee(Employee employee) {
+		
+		return null;
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	@Transactional
+	public List<Employee> getAllEmployee() {
+		
+		return dao.getAllEmployee();
+	}
+
+	@Override
+	public void deleteEmployee() {
+		// TODO Auto-generated method stub
+
+	}
+};

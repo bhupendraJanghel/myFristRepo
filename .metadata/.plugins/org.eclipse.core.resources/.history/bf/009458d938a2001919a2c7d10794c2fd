@@ -1,0 +1,70 @@
+package com.example.springbootRestEmployee.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.springbootRestEmployee.entity.Employee;
+import com.example.springbootRestEmployee.service.EmployeeService;
+
+@RestController
+@RequestMapping("/api")
+public class EmployeeRestController {
+
+	private EmployeeService service;
+
+	@Autowired
+	public EmployeeRestController(EmployeeService service) {
+		super();
+		this.service = service;
+	}
+
+	@RequestMapping("/")
+	public String getSomething() {
+		return "welcome";
+	}
+
+	@GetMapping("/employees")
+	public List<Employee> getAllEmployee() {
+
+		return service.getAllEmployee();
+	}
+
+	@GetMapping("/employees/{id}")
+	public Employee findEmployeeById(@PathVariable int id) {
+		Employee employee = service.getEmployeeById(id);
+		if (employee == null)
+			throw new EmployeeNotFoundException("Employee id:" + id + " is not available");
+		return employee;
+	}
+
+	@PostMapping("/employees/")
+	public ResponseEntity<?> saveEmployee(@RequestBody Employee employee) {
+
+		employee.setId(0);
+		service.saveEmployee(employee);
+		return ResponseEntity.ok().body("Employee added successfully.");
+
+	}
+
+	@DeleteMapping("/employees/{id}")
+	public ResponseEntity<?> deleteEmployee(@PathVariable int id) {
+		service.deleteEmployee(id);
+		return ResponseEntity.ok().body("Employee deleted successfully");
+	}
+
+	@PutMapping("/employees/")
+	public ResponseEntity<?> updateEmployee(@RequestBody Employee employee) {
+		service.saveEmployee(employee);
+		return ResponseEntity.ok().body("Employee Updated successfully.");
+	}
+}

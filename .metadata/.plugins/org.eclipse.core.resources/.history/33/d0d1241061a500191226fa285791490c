@@ -1,0 +1,5 @@
+package comm.Bhuppi.demo.config;
+
+public class DemoAppConfig {
+
+}

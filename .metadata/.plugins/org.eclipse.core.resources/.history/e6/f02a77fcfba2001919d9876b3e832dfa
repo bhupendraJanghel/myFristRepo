@@ -1,0 +1,28 @@
+package com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.dao.EmployeeDao;
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.entity.Employee;
+@Service
+public class EmployeeServiceImpl implements EmployeeService {
+
+	 private EmployeeDao employeewDao;
+	
+	@Autowired
+	public EmployeeServiceImpl(EmployeeDao employeewDao) {
+		super();
+		this.employeewDao = employeewDao;
+	}
+
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		
+		return employeewDao.findAll();
+	}
+
+}

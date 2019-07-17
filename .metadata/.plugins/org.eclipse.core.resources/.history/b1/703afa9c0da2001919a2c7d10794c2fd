@@ -1,0 +1,13 @@
+package com.example.springbootRestEmployee.dao;
+
+import java.util.List;
+import javax.persistence.EntityManager;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.example.springbootRestEmployee.entity.Employee;
+
+@Repository
+public class EmployeeDaoImpl implements EmployeeDao {
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Define the  bean -->
+
+<!-- <bean name="myBaseBallCoach" class="comm.example.springdemo.BaseBallCoach"></bean>
+
+<bean name="myTrackCoach" class="comm.example.springdemo.TrackCoach"></bean> -->
+
+
+<bean name="myFortuneService" class="comm.example.springdemo.HappyFortuneService"></bean>
+
+<!-- constructor injection -->
+
+<!-- <bean name="myBaseBallCoach" class="comm.example.springdemo.BaseBallCoach">
+    <constructor-arg name="myFortuneService" ref="myFortuneService"></constructor-arg>
+</bean> -->
+
+<bean name="myBaseBallCoach" class="comm.example.springdemo.BaseBallCoach">
+    <property name="myFortuneService" ref="myFortuneService"></property>
+</bean> 
+
+</beans>

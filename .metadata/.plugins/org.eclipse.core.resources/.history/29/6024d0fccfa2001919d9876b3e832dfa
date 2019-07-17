@@ -1,0 +1,5 @@
+package com.example.Thymeleaf.model;
+
+public class Student {
+
+}

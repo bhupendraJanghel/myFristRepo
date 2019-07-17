@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="myFortuneServie"
+		class="comm.example.springdemo.HappyFortuneService"></bean>
+
+	<bean name="myCoach" class="comm.example.springdemo.CricketCoach">
+		<property name="email" value="bhuppi@gmail.com" />
+		<property name="team" value="Chennai super king" />
+		<property name="fortuneService" ref="myFortuneServie" />
+	</bean>
+</beans>

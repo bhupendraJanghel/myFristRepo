@@ -1,0 +1,11 @@
+package com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.entity.Employee;
+
+public interface EmployeeDao extends JpaRepository<Employee, Integer> {
+
+	
+	public 
+}

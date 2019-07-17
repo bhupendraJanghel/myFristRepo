@@ -1,0 +1,5 @@
+package com.example.springbootRestEmployee.service;
+
+public class EmployeeService {
+
+}

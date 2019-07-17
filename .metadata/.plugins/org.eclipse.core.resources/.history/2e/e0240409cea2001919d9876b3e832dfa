@@ -1,0 +1,21 @@
+package com.example.Thymeleaf.controller;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
+@Controller
+public class HomeController {
+	
+	@RequestMapping("/sayHello")
+	public String sayHello(Model theModel)
+	{
+		theModel.addAttributes("theDate",new Date());
+		return "hello-world";
+	}
+	
+}

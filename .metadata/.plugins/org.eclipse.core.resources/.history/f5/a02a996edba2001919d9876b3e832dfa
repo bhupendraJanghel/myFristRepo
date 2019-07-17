@@ -1,0 +1,3 @@
+<meta http-equiv="refresh" content="2; url='student'">
+
+<a href="@{student/list}">Student List</a>

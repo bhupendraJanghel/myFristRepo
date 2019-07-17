@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;EmployeeDao.java&apos; to &apos;templates&apos;&#x0D;&#x0A;- Original project: &apos;01-spring-boot-Rest-Employee&apos;&#x0D;&#x0A;- Destination element: &apos;templates&apos;&#x0D;&#x0A;- Original element: &apos;com.example.springbootRestEmployee.dao.EmployeeDao.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" element1="/src\/main\/java&lt;com.example.springbootRestEmployee.dao{EmployeeDao.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1562585600991" target="src/main/resources/templates" units="1" version="1.0"/>
+</session>

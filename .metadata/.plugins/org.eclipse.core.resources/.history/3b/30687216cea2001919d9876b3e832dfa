@@ -1,0 +1,8 @@
+@charset "ISO-8859-1";
+
+funny {
+	color: Purple;
+	font-size: medium;
+	font-family: Comic Sans MS;
+	text-align: justify
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/employee/save}"  th:object="${employee}e">
+
+ <div class="ui-field-contain"><label>First Name : </label>
+  <input th:field="*{firstName}" id="firsName" data-clear-btn="true" type="text" placeholder="type here..."><br/>
+  <label>Last Name : </label>
+  <input th:field="*{lastName}" id="firsName" data-clear-btn="true" type="text" placeholder="type here..."><br/>
+  <label>Salary : </label>
+  <input th:field="*{salary}" id="salary" data-clear-btn="true" type="number" placeholder="$">
+  
+  </div>
+</form>
+</body>
+</html>

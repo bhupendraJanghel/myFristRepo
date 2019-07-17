@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>heLlo ThymeLeaf </title>
+
+<link rel="styleSheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+
+<h3>welcome to thymeleaf</h3>
+<hr>
+<h4>Studetn Detail</h4><hr>
+	<p th:text="'ID:'+${student.id}" class="funny" />
+	<p th:text="'ID:'+${student.name}" class="funny"/>
+<p th:text="'ID:'+${student.address}" class="funny"/>
+</body>
+</html>

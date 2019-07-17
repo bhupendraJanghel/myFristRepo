@@ -1,0 +1,5 @@
+package comm.springsecurity.demo.config;
+
+public class SecurityWebApplicationInitializer {
+
+}

@@ -1,0 +1,50 @@
+package com.example.springbootRestEmployee.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.example.springbootRestEmployee.entity.Employee;
+
+@Repository
+public class EmployeeDaoJPAImpl implements EmployeeDao {
+
+	private EntityManager entityManager;
+	
+	@Autowired
+	public EmployeeDaoJPAImpl(EntityManager entityManager) {
+		super();
+		this.entityManager = entityManager;
+	}
+
+	@Override
+	public List<Employee> getAllEmployee() {
+		TypedQuery<Employee> query=entityManager.createQuery("from Employee",Employee.class);
+		return query.getResultList();
+	}
+
+	@Override
+	public Employee getEmployeeById(int id) {
+		Employee employee=entityManager.find(Employee.class,id );
+		return employee;
+		
+	}
+
+	@Override
+	public Employee saveEmployee(Employee employee) {
+		Employee empl=entityManager.merge(employee);
+		empl.setId(empl.getId());
+		return employee;
+	}
+
+	@Override
+	public void deleteEmployee(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+}

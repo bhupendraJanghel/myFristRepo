@@ -1,0 +1,23 @@
+package com.example.Thymeleaf.controller;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.example.Thymeleaf.model.Student;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
+
+@Controller
+public class HomeController {
+	
+	@GetMapping("/student")
+	public String sayHello(Model theModel)
+	{
+		theModel.addAttribute("student",new Student(1, "Bhuppi", "Bangalore"));
+		return "display";
+	}
+	
+}

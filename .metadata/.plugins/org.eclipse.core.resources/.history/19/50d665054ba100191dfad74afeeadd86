@@ -1,0 +1,5 @@
+package com.example.springbootconverter.controller;
+
+public class ConverterController {
+
+}

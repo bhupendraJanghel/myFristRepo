@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Form</title>
+</head>
+<body>
+	
+	<div class="container">
+<h3>Employee Form</h3>
+	<hr>
+
+
+		<form  ="#" th:action="@{/employees/save}"
+			th:object="${employee}">
+
+			<div class="form-group" >
+				<label>First Name : </label> <input class="form-control"
+					th:field="*{firstName}" id="firsName" data-clear-btn="true"
+					type="text" placeholder="type here..." /><br /> <label>Last
+					Name : </label> <input class="form-control" th:field="*{lastName}"
+					id="firsName" data-clear-btn="true" type="text"
+					placeholder="type here..." /><br /> <label>Salary : </label> <input
+					class="form-control" th:field="*{salary}" id="salary"
+					data-clear-btn="true" type="number" placeholder="$" /> <br />
+				<button class="btn btn-lg btn-danger" type="submit">Add</button>
+			</div>
+
+		</form>
+	</div>
+</body>
+</html>

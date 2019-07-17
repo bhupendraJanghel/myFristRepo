@@ -1,0 +1,39 @@
+package com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.dao.EmployeeDao;
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.entity.Employee;
+import com.example.spring.Jpa.ThymeLeaf.ThymleafEmployee.service.EmployeeService;
+
+@RestController
+@RequestMapping("/api")
+public class EmployeeController {
+
+	
+	private EmployeeService service;
+
+	public EmployeeController(EmployeeService service) {
+		super();
+		this.service = service;
+	}
+
+	@GetMapping("/employees")
+	public String getAllEmployee(Model theModel)
+	{ 
+		List<Employee> list=service.getAllEmployee();
+		theModel.addAttribute("employeeList", list);
+		return "employee-list";
+		
+	}
+	
+	
+	
+	
+}

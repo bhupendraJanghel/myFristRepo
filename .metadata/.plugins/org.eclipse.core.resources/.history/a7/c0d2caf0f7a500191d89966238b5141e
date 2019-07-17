@@ -1,0 +1,15 @@
+package comm.example.projectManagementtask.dao;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import comm.example.projectManagementtask.entity.Task;
+
+public interface TaskDaoRepository extends JpaRepository<Task, Integer> {
+	
+	
+		
+		
+		
+}
